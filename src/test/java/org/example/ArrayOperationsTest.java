@@ -7,9 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ArrayOperationsTest {
 
     @Test
-    void numZero_arrayNulo_lanzaNullPointerException() {
-        assertThrows(NullPointerException.class, () -> ArrayOperations.numZero(null));
-    }
+    void numZero_arrayNulo_lanzaNullPointerException() {assertThrows(NullPointerException.class, () -> ArrayOperations.numZero(null));}
 
     @Test
     void numZero_arrayVacio_retornaCero() {
@@ -47,8 +45,6 @@ class ArrayOperationsTest {
     }
 
     @Test
-    void numZero_soloNegativosYPositivos_retornaCero() {
-        assertEquals(0, ArrayOperations.numZero(new int[] {-1, 5, -3, 7}));
-    }
+    void numZero_soloNegativosYPositivos_retornaCero() {assertEquals(0, ArrayOperations.numZero(new int[] {-1, 5, -3, 7}));}
 
 }
