@@ -1,0 +1,72 @@
+package org.example;
+
+public class ArrayOperations  {
+// Adaptado de "Introduction to Software Testing", 
+	
+   public static int numZero(int[] x) {
+      if (x == null) 
+        throw new NullPointerException();
+        // throw new NullPointerException("el array es nulo");
+
+      int count = 0;
+      // La funcion iniciaba en uno por eso en las pruebas cuando el 0 estaba al inicio no lo contaba
+      for (int i = 1; i < x.length; i++)
+         if (x[i] == 0) 
+            count++;
+      return count;
+   }
+ 
+   public static int findLast(int[] x, int y) {
+      if (x == null) 
+         throw new NullPointerException();
+      for (int i = x.length-1; i > 0; i--) 
+      {
+         if (x[i] == y) 
+            return i; 
+      }
+      return -1; 
+   }
+   // test: x = [2, 3, 5]; y = 2; 
+   // expected = 0
+
+   public static int countPositive (int[] x) {  
+      if (x == null) 
+         throw new NullPointerException();
+      int count = 0; 
+      for (int i = 0; i < x.length; i++) 
+      {
+         if (x[i] >= 0) 
+            count++;
+      }
+      return count;
+   }
+   // test:  x = [-4, 2, 0, 2]             
+   // expected = 2  
+   
+   public static int lastZero (int[] x) {
+      if (x == null) 
+         throw new NullPointerException();
+      for (int i = 0; i < x.length; i++) 
+      {
+         if (x[i] == 0)    
+            return i; 
+      }
+      return -1; 
+   }
+   // test: x = [0, 1, 0]
+   // expected = 2
+
+   public static int oddOrPos (int[] x) {  
+      if (x == null) 
+         throw new NullPointerException();
+      int count = 0;
+       for (int j : x) {
+           if (j % 2 == 1 || j > 0)
+               count++;
+       }
+      return count; 
+   }
+   // test: x = [-3, -2, 0, 1, 4]           
+   // expected = 3
+
+}
